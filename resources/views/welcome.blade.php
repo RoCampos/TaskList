@@ -28,11 +28,11 @@
 
             <div class="row justify-content-center pt-5">
                 <div class="col-sm-6">
-                    <a class="btn btn-success btn-user btn-block" href="#">Login</a>
+                    <a class="btn btn-success btn-user btn-block" href="{{route('login')}}">Login</a>
                 </div>
 
                 <div class="col-sm-6">
-                    <a class="btn btn-secondary btn-user btn-block" href="#">Register</a>
+                    <a class="btn btn-secondary btn-user btn-block" href="{{route('register')}}">Register</a>
                 </div>
             </div>
 
