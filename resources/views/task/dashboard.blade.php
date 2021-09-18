@@ -1,12 +1,12 @@
 @extends('dashboard.layout')
 
 @section('page-title')
-Painel de Controle
+Task List - Dashboard
 @endsection
 
 @section('page-heading')
     @include('dashboard.page-heading', [
-        'heading' => 'Panel de Controle',
+        'heading' => 'Dashboard - Tasks',
     ])
 @endsection
 
@@ -14,10 +14,12 @@ Painel de Controle
         <div class="col">
              <div class="card shadow mb-4">
                     <div class="card-header d-sm-flex align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Tasks</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">
+                            Tasks @if($filter) Already done @endif
+                        </h6>
                         <a href="#" data-toggle="modal" data-target="#logoutModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-plus-circle fa-sm text-white-50"></i>
-                            Nova Tarefa
+                            New Task
                         </a>
                     </div>
                     <div class="card-body">
@@ -89,7 +91,7 @@ Painel de Controle
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="#" onclick="document.getElementById('task-create').submit(); return false;">Logout</a>
+                        <a class="btn btn-primary" href="#" onclick="document.getElementById('task-create').submit(); return false;">Adicionar</a>
                     </div>
                 </div>
             </div>

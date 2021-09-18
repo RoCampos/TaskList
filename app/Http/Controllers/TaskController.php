@@ -28,7 +28,7 @@ class TaskController extends Controller
             ])->get();
         }
 
-        return view('task.dashboard', ['tasks'=>$tasks]);
+        return view('task.dashboard', ['tasks'=>$tasks, 'filter'=>$filter]);
     }
 
     public function done () {
@@ -65,8 +65,13 @@ class TaskController extends Controller
 
     public function clone (Task $task) {
         $newtask = $task->replicate();
+
+        if ($newtask->status) {
+            $newtask->status = false;
+        }
+
         $newtask->save();
-        return back();
+        return redirect()->route('home');
     }
 
     public function update (Task $task) {
