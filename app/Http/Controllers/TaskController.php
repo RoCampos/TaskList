@@ -28,7 +28,7 @@ class TaskController extends Controller
             ])->get();
         }
 
-        return view('task.dashboard', ['tasks'=>$tasks]);
+        return view('task.dashboard', ['tasks'=>$tasks, 'filter'=>$filter]);
     }
 
     public function done () {
@@ -71,7 +71,7 @@ class TaskController extends Controller
         }
 
         $newtask->save();
-        return back();
+        return redirect()->route('home');
     }
 
     public function update (Task $task) {
