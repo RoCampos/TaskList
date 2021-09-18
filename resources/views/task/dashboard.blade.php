@@ -89,7 +89,7 @@ Painel de Controle
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="#" onclick="document.getElementById('task-create').submit(); return false;">Logout</a>
+                        <a class="btn btn-primary" href="#" onclick="document.getElementById('task-create').submit(); return false;">Adicionar</a>
                     </div>
                 </div>
             </div>

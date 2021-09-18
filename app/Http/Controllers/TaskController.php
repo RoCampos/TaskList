@@ -65,6 +65,11 @@ class TaskController extends Controller
 
     public function clone (Task $task) {
         $newtask = $task->replicate();
+
+        if ($newtask->status) {
+            $newtask->status = false;
+        }
+
         $newtask->save();
         return back();
     }
